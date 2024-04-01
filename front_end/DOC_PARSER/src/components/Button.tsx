@@ -6,11 +6,13 @@ function Button({
   variant = "teal",
   children,
   customWidth,
+  loading,
 }: {
   handleClick?: () => void;
   variant?: "teal" | "red" | "primary";
   children?: ReactNode;
   customWidth?: number;
+  loading?: boolean;
 }) {
   return (
     <>
@@ -23,7 +25,8 @@ function Button({
             ? "bg-pry-2 text-white border-0 rounded-[5px] text-[13px]"
             : variant === "red"
             ? "border-red-600 text-red-600 rounded-[50px]"
-            : "border-teal-600 text-teal-600 rounded-[50px]"
+            : "border-teal-600 text-teal-600 rounded-[50px]",
+          loading ? "opacity-35 pointer-events-none" : ""
         )}
       >
         {children}
